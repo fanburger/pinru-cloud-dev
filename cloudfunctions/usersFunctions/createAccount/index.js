@@ -1,18 +1,11 @@
 const cloud = require('wx-server-sdk')
-const crypto = require('crypto');
-
-const SECRET_KEY = ';lkjl,mnb'
+const md5 = require('../utils/md5')
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
 });
 
 const db = cloud.database()
-
-function md5(passwd) {
-  let md5 = crypto.createHash('md5')
-  return md5.update(passwd).digest('hex')
-}
 
 exports.main = async (event, context) => {
 
@@ -33,7 +26,7 @@ exports.main = async (event, context) => {
     passwd,
     phoneNumber
   } = event
-  passwdMD5 = md5(passwd)
+  passwdMD5 = md5.md5(passwd)
   await db.collection('users').add({
     data: {
       _openid: OPENID,
