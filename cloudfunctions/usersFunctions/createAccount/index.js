@@ -32,7 +32,7 @@ exports.main = async (event, context) => {
       _openid: OPENID,
       phoneNumber: phoneNumber,
       passwdMD5: passwdMD5,
-      avatarid: '',
+      avatarCloudUrl: '',
       nickname: '微信用户',
       gender: '保密',
     }
