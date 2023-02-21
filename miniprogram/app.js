@@ -12,6 +12,7 @@ App({
       key: 'userInfo',
       success: res => {
         this.globalData.userInfo = res.data
+        this.globalData.isLogin = true
       },
       fail: err => {
         console.log(err);
@@ -19,6 +20,7 @@ App({
     })
   },
   globalData: {
-    userInfo: {}
+    userInfo: {},
+    isLogin: false
   }
 });

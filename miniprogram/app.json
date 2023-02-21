@@ -4,7 +4,9 @@
     "pages/login/index",
     "pages/cart/cart",
     "pages/me/me",
-    "pages/orderEditor/index"
+    "pages/orderEditor/index",
+    "pages/userSettings/userSettings",
+    "pages/userConfig/userConfig"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

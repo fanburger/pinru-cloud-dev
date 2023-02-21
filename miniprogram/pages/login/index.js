@@ -2,6 +2,7 @@ import {
   bgLogo
 } from '../../fileID'
 
+const app = getApp()
 const db = wx.cloud.database();
 const userCollection = db.collection('users');
 
@@ -120,11 +121,14 @@ Page({
         })
       }
       if (status == 'success') {
+        wx.setStorageSync('userInfo', user)
+        app.globalData.userInfo = user
+        app.globalData.isLogin = true
         wx.showToast({
           title: '注册成功',
           icon: 'success'
         })
-        wx.setStorageSync('userInfo', user)
+        wx.navigateBack()
       }
     }).catch(res => {
       wx.showToast({
@@ -156,11 +160,14 @@ Page({
           isLoginMode: false
         })
       } else if (status == 'success') {
+        wx.setStorageSync('userInfo', user)
+        app.globalData.userInfo = user
+        app.globalData.isLogin = true
         wx.showToast({
           title: '登录成功',
           icon: 'success'
         })
-        wx.setStorageSync('userInfo', user)
+        wx.navigateBack()
       }
     })
   },
@@ -198,9 +205,12 @@ Page({
       }
       if (status == 'success') {
         wx.setStorageSync('userInfo', user)
+        app.globalData.userInfo = user
+        app.globalData.isLogin = true
         wx.showToast({
           title: '登录成功',
         })
+        wx.navigateBack()
       }
       wx.hideLoading()
     }).catch(err => {

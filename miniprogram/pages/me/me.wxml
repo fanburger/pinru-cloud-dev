@@ -2,19 +2,26 @@
 
   <!-- 设置入口卡片 -->
   <view class="mysettings-card">
-    <view class="personal-settings">
-      <image class="icon-32" src="../../icons/my-config-nologin.svg" mode="widthFix" />
-      <image class="icon-32" src="../../icons/settings-nologin.svg" mode="widthFix" />
+    <view class="personal-settings" wx:if="{{!isLogin}}">
+      <image class="icon-32" src="../../icons/my-config-nologin.svg" mode="widthFix" bindtap="gotoMyConfig" />
+      <image class="icon-32" src="../../icons/settings-nologin.svg" mode="widthFix" bindtap="gotoSettings" />
+    </view>
+    <!-- TODO:暂时没有下载相关状态的切图 -->
+    <view class="personal-settings" wx:if="{{isLogin}}">
+      <image class="icon-32" src="../../icons/self-config-login.svg" mode="widthFix" bindtap="gotoMyConfig" />
+      <image class="icon-32" src="../../icons/settings-login.svg" mode="widthFix" bindtap="gotoSettings" />
     </view>
     <view class="avatar">
-      <image src="../../icons/default-avatar.svg" mode="widthFix" style="width: 128rpx;" />
-      <text style="color: #1A1A1A;font-size: 28rpx;">立即登录</text>
+      <button open-type="chooseAvatar" bindchooseavatar="chooseAvatar" hover-class="none" style="background: white;">
+        <image src="../../icons/default-avatar.svg" mode="widthFix" style="width: 128rpx;" />
+      </button>
+      <text style="color: #1A1A1A;font-size: 28rpx;" bindtap="{{isLogin? '':'gotoLogin'}}">{{isLogin? userInfo.nickname:'立即登录'}}</text>
     </view>
     <view class="sepline">
     </view>
     <view class="notice-title">
       <image class="icon-32" src="../../icons/aeroplane.svg" mode="widthFix" />
-      <text class="link-text">您有一份《品如的衣柜》使用指南待查看></text>
+      <text class="link-text">目前暂无通知</text>
     </view>
   </view>
 
