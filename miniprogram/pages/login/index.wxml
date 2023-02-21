@@ -9,23 +9,23 @@
   <block wx:if="{{isLoginMode}}">
     <view class="login-input">
       <image src="../../icons/phone.svg" mode="widthFix" class="login-input-image" />
-      <input type="number" placeholder="请输入您的手机号码" class="login-input-input" />
+      <input type="number" placeholder="请输入您的手机号码" bindinput="inputPhoneNumber" value="{{form.phoneNumber}}" class="login-input-input" />
     </view>
     <view class="login-input">
       <image src="../../icons/lock.svg" mode="widthFix" class="login-input-image" />
-      <input type="text" placeholder="对应的密码（8-16位）" class="login-input-input" password maxlength="16" />
+      <input type="text" placeholder="对应的密码（8-16位）" class="login-input-input" password maxlength="16" bindinput="inputPasswd" data-type="passwd" value="{{form.passwd}}" />
     </view>
     <view class="link-text help-text">
       登录遇到问题？
     </view>
-    <view class="theme-color big-button" style="border: 1px solid #95FFF2;">
+    <view class="theme-color big-button" style="border: 1px solid #95FFF2;" bindtap="phoneLogin">
       <text class="opt-text-medium" style="color: #fff;">登录</text>
       <image src="../../icons/right-arrow.svg" mode="widthFix" style="width: 48rpx;" />
     </view>
     <view class="big-button" style="background: #ededed;" bindtap="switchLogin">
       <text class="opt-text-medium">快速注册</text>
     </view>
-    <view class="wx-login">
+    <view class="wx-login" bindtap="quickLogin">
       <image src="../../icons/wx-logo.svg" mode="widthFix" style="width: 148rpx;" />
       <text style="color: #767676;">一键登录</text>
     </view>
@@ -36,7 +36,7 @@
     <view class="sign-up-phone">
       <view class="input-phone">
         <image src="../../icons/phone.svg" mode="widthFix" class="login-input-image" />
-        <input type="number" placeholder="手机号码" class="login-input-input" />
+        <input type="number" placeholder="手机号码" bindinput="inputPhoneNumber" value="{{form.phoneNumber}}" class="login-input-input" />
       </view>
       <button open-type="getPhoneNumber" class="theme-color get-phone-button" bindgetphonenumber="getPhoneNumber">
         点击获取
@@ -44,11 +44,11 @@
     </view>
     <view class="login-input">
       <image src="../../icons/lock.svg" mode="widthFix" class="login-input-image" />
-      <input type="text" placeholder="密码（8-16位）" class="login-input-input" password maxlength="16" />
+      <input type="text" placeholder="密码（8-16位）" class="login-input-input" password maxlength="16" bindinput="inputPasswd" data-type="passwd" value="{{form.passwd}}" />
     </view>
     <view class="login-input">
       <image src="../../icons/lock.svg" mode="widthFix" class="login-input-image" />
-      <input type="text" placeholder="确认密码（8-16位）" class="login-input-input" password maxlength="16" />
+      <input type="text" placeholder="确认密码（8-16位）" class="login-input-input" password maxlength="16" bindinput="inputPasswd" data-type="confirmPasswd" value="{{form.confirmPasswd}}" />
     </view>
     <view class="link-text sign-link">
       <view bindtap="switchLogin">
@@ -58,7 +58,7 @@
         登录遇到问题？
       </view>
     </view>
-    <view class="theme-color big-button" style="border: 1px solid #95FFF2;">
+    <view class="theme-color big-button" style="border: 1px solid #95FFF2;" bindtap="createAccount">
       <text class="opt-text-medium" style="color: #fff;">注册</text>
       <image src="../../icons/right-arrow.svg" mode="widthFix" style="width: 48rpx;" />
     </view>

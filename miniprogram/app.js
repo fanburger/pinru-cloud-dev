@@ -8,7 +8,17 @@ App({
         traceUser: true,
       });
     }
-
-    this.globalData = {};
+    wx.getStorage({
+      key: 'userInfo',
+      success: res => {
+        this.globalData.userInfo = res.data
+      },
+      fail: err => {
+        console.log(err);
+      }
+    })
+  },
+  globalData: {
+    userInfo: {}
   }
 });
