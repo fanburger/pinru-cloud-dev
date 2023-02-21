@@ -1,0 +1,29 @@
+<view class="card"  bindtap="gotoDetailPage" style="gap: {{elemGap}};background: {{checkedBg}};">
+  <view wx:if="{{cardType == 'selector' && !selected}}" catchtap="switchSelect">
+    <image src="../../icons/white-ellipse.svg" mode="widthFix" style="width: 48rpx;margin-left: 16rpx;"/>
+  </view>
+  <view wx:if="{{cardType == 'selector' && selected}}" catchtap="switchSelect">
+    <image src="../../icons/checked-green.svg" mode="widthFix" style="width: 48rpx;margin-left: 16rpx;"/>
+  </view>
+  <view class="title-image">
+    <image src="{{goodsInfo.titleImage}}" mode="widthFix" class="title-image-148" style="margin-left: {{titleImageLeft}};" />
+  </view>
+  <view class="card-right">
+    <view class="title-text">
+      {{goodsInfo.title}}
+    </view>
+    <view class="tags-price">
+      <block wx:for="{{goodsInfo.tags}}" wx:key="item">
+        <image src="../../icons/tags/{{item}}.svg" mode="widthFix" style="width: 70rpx;margin-right: 22rpx;" />
+      </block>
+      <view class="unit-price" style="left: {{unitPriceLeft}};" wx:if="{{cardType != 'selector'}}">
+        <text class="price">￥{{goodsInfo.titlePrice}}</text>
+        <text class="unit">/{{goodsInfo.unitTime}}</text>
+      </view>
+      <view class="unit-price" style="left: {{unitPriceLeft}};" wx:if="{{cardType == 'selector'}}">
+        <text class="price">￥{{goodsInfo.unitPrice*goodsInfo.totalNum}}</text>
+        <text class="unit">({{goodsInfo.unitPrice}}x{{goodsInfo.totalNum}})</text>
+      </view>
+    </view>
+  </view>
+</view>

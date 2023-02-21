@@ -1,0 +1,102 @@
+.mysettings-card{
+  position: relative;
+  top: 48rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  border-radius: 28rpx;
+  background-color: white;
+  box-shadow: 4rpx 20rpx 24rpx 0rpx rgba(0, 0, 0, 0.04);
+}
+
+.personal-settings{
+  position: relative;
+  top: 24rpx;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.avatar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sepline{
+  position: relative;
+  width: 90%;
+  border-radius: 10rpx;
+  margin: 24rpx 0 2rpx 0;
+  border: 2rpx solid rgba(214, 214, 214, 0.36);
+}
+
+.notice-title{
+  display: flex;
+  align-items: center;
+  width: 90%;
+}
+
+.goods-container{
+  position: relative;
+  top: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  border-radius: 28rpx;
+  background-color: white;
+  box-shadow: 4rpx 20rpx 24rpx 0rpx rgba(0, 0, 0, 0.04);
+}
+
+.goods-opt{
+  position: relative;
+  top: 8rpx;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.goods-opt-item{
+  display:flex;
+  align-items: center;
+}
+
+.order-opt{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin-top: 18rpx;
+  margin-bottom: 22rpx;
+}
+
+.ord-opt-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.address-msg-con{
+  position: relative;
+  top: 156rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90vw;
+  border-radius: 28rpx;
+  background-color: white;
+  box-shadow: 4rpx 20rpx 24rpx 0rpx rgba(0, 0, 0, 0.04);
+}
+
+.wide-btn{
+  display: flex;
+  align-items: center;
+  height: 132rpx;
+  width: 40%;
+  margin-top: 24rpx;
+  margin-bottom: 24rpx;
+  border-radius: 24rpx;
+}

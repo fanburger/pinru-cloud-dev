@@ -1,0 +1,92 @@
+.login-bg {
+  position: relative;
+  width: 100%;
+  height: 380rpx;
+  background: linear-gradient(
+    180deg,
+    #7bc7c3 0%,
+    rgba(123, 199, 195, 0.64) 100%
+  );
+}
+
+.bg-image {
+  position: relative;
+  top: 90rpx;
+  left: 64rpx;
+  height: 256rpx;
+}
+
+.control-container {
+  position: absolute;
+  width: 100%;
+  height: 68rpx;
+  top: 342rpx;
+  background: #fff;
+  border-radius: 28rpx 28rpx 0rpx 0rpx;
+}
+
+.login-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 80vw;
+  height: 84rpx;
+  background: #f7f7f7;
+  border-radius: 200rpx;
+}
+
+.login-input-image {
+  position: relative;
+  left: 28rpx;
+  width: 24rpx;
+}
+
+.login-input-input {
+  position: relative;
+  left: 54rpx;
+}
+
+.help-text {
+  position: relative;
+  left: 216rpx;
+  bottom: 24rpx;
+}
+
+.wx-login {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-up-phone {
+  display: flex;
+  gap: 32rpx;
+  width: 80vw;
+  flex-direction: row;
+  height: 86rpx;
+}
+
+.input-phone {
+  position: relative;
+  display: flex;
+  flex-basis: 374rpx;
+  align-items: center;
+  background: #f7f7f7;
+  border-radius: 200rpx;
+}
+
+.get-phone-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 206rpx;
+  border-radius: 200rpx;
+  color: white;
+  font-size: 24rpx;
+  letter-spacing: 0.1em;
+}
+
+.sign-link{
+  display: flex;
+  width: 80vw;
+  gap: 334rpx;
+}

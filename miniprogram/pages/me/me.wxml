@@ -1,0 +1,70 @@
+<view class="container">
+
+  <!-- 设置入口卡片 -->
+  <view class="mysettings-card">
+    <view class="personal-settings">
+      <image class="icon-32" src="../../icons/my-config-nologin.svg" mode="widthFix" />
+      <image class="icon-32" src="../../icons/settings-nologin.svg" mode="widthFix" />
+    </view>
+    <view class="avatar">
+      <image src="../../icons/default-avatar.svg" mode="widthFix" style="width: 128rpx;" />
+      <text style="color: #1A1A1A;font-size: 28rpx;">立即登录</text>
+    </view>
+    <view class="sepline">
+    </view>
+    <view class="notice-title">
+      <image class="icon-32" src="../../icons/aeroplane.svg" mode="widthFix" />
+      <text class="link-text">您有一份《品如的衣柜》使用指南待查看></text>
+    </view>
+  </view>
+
+  <!-- 商品和订单管理入口 -->
+  <view class="goods-container">
+    <view class="goods-opt">
+      <view class="goods-opt-item">
+        <image class="icon-32" src="../../icons/favorite.svg" mode="widthFix" />
+        <text class="sm-text">我的收藏</text>
+      </view>
+      <view class="goods-opt-item">
+        <image class="icon-32" src="../../icons/history.svg" mode="widthFix" />
+        <text class="sm-text">浏览记录</text>
+      </view>
+      <view class="goods-opt-item">
+        <image class="icon-32" src="../../icons/coupons.svg" mode="widthFix" />
+        <text class="sm-text">优惠券</text>
+      </view>
+    </view>
+    <view class="sepline" style="margin-top: 12rpx;">
+    </view>
+    <view class="order-opt">
+      <view class="ord-opt-item">
+        <image class="icon-72" src="../../icons/wallet.svg" mode="widthFix" />
+        <text class="sm-text">待付款</text>
+      </view>
+      <view class="ord-opt-item">
+        <image class="icon-72" src="../../icons/box.svg" mode="widthFix" />
+        <text class="sm-text">待取货</text>
+      </view>
+      <view class="ord-opt-item">
+        <image class="icon-72" src="../../icons/chat.svg" mode="widthFix" />
+        <text class="sm-text">待评价</text>
+      </view>
+      <view class="ord-opt-item">
+        <image class="icon-72" src="../../icons/order.svg" mode="widthFix" />
+        <text class="sm-text">全部订单</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 地址管理和客服入口 -->
+  <view class="address-msg-con">
+    <view class="wide-btn blue-linear-gradient">
+      <image class="icon-88" src="../../icons/pin.svg" mode="widthFix"/>
+      <text class="big-white-text">地址管理</text>
+    </view>
+    <view class="wide-btn orange-linear-gradient">
+      <image class="icon-88" src="../../icons/message.svg" mode="widthFix"/>
+      <text class="big-white-text">联系客服</text>
+    </view>
+  </view>
+</view>
