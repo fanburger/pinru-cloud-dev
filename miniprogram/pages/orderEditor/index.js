@@ -1,18 +1,26 @@
-// pages/orderEditor/index.js
+import {
+  titleImageHome
+} from '../../fileID'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    _id: '',
+    goods: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    let {
+      _id
+    } = options
+    this.setData({
+      _id: _id
+    })
   },
 
   /**
@@ -26,6 +34,34 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    let {
+      _id
+    } = this.data
+    wx.cloud.callFunction({
+      name: 'goodsFunctions',
+      data: {
+        name: 'detail',
+        _id: _id
+      }
+    }).then(res => {
+      let {
+        status,
+        msg,
+        goods
+      } = res.result
+      if (status == 'fail') {
+        wx.showToast({
+          title: msg,
+          icon: 'error'
+        })
+      }
+      if (status == 'success') {
+        goods.titleImage = `${titleImageHome}${_id}.png`
+        this.setData({
+          goods: goods
+        })
+      }
+    })
 
   },
 

@@ -1,2 +1,3 @@
-<view class="container">
+<view class="container" style="padding-top: 56rpx;">
+  <goods-card goodsInfo="{{goods}}" cardType="normal"></goods-card>
 </view>
