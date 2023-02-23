@@ -24,6 +24,11 @@
   align-items: center;
 }
 
+.avatar_image{
+  width: 128rpx;
+  border-radius: 100%;
+}
+
 .sepline{
   position: relative;
   width: 90%;

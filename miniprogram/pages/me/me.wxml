@@ -6,15 +6,12 @@
       <image class="icon-32" src="../../icons/my-config-nologin.svg" mode="widthFix" bindtap="gotoMyConfig" />
       <image class="icon-32" src="../../icons/settings-nologin.svg" mode="widthFix" bindtap="gotoSettings" />
     </view>
-    <!-- TODO:暂时没有下载相关状态的切图 -->
     <view class="personal-settings" wx:if="{{isLogin}}">
       <image class="icon-32" src="../../icons/self-config-login.svg" mode="widthFix" bindtap="gotoMyConfig" />
       <image class="icon-32" src="../../icons/settings-login.svg" mode="widthFix" bindtap="gotoSettings" />
     </view>
-    <view class="avatar">
-      <button open-type="chooseAvatar" bindchooseavatar="chooseAvatar" hover-class="none" style="background: white;">
-        <image src="../../icons/default-avatar.svg" mode="widthFix" style="width: 128rpx;" />
-      </button>
+    <view bindtap="gotoMyConfig" class="avatar">
+      <image src="{{avatar}}" mode="widthFix" class="avatar_image" />
       <text style="color: #1A1A1A;font-size: 28rpx;" bindtap="{{isLogin? '':'gotoLogin'}}">{{isLogin? userInfo.nickname:'立即登录'}}</text>
     </view>
     <view class="sepline">
@@ -65,12 +62,12 @@
 
   <!-- 地址管理和客服入口 -->
   <view class="address-msg-con">
-    <view class="wide-btn blue-linear-gradient">
-      <image class="icon-88" src="../../icons/pin.svg" mode="widthFix"/>
+    <view class="wide-btn blue-linear-gradient" bindtap="gotoAddressManager">
+      <image class="icon-88" src="../../icons/pin.svg" mode="widthFix" />
       <text class="big-white-text">地址管理</text>
     </view>
-    <view class="wide-btn orange-linear-gradient">
-      <image class="icon-88" src="../../icons/message.svg" mode="widthFix"/>
+    <view class="wide-btn orange-linear-gradient" bindtap="gotoChat">
+      <image class="icon-88" src="../../icons/message.svg" mode="widthFix" />
       <text class="big-white-text">联系客服</text>
     </view>
   </view>

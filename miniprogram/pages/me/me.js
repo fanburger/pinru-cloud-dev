@@ -7,30 +7,12 @@ Page({
    */
   data: {
     isLogin: false,
-    userInfo: {}
-  },
-  gotoLogin(){
-    let {
-      isLogin
-    } = this.data
-    if (!isLogin) {
-      wx.showModal({
-        title: '尚未登陆',
-        content: '是否前往登录页',
-        complete: (res) => {
-          if (res.confirm) {
-            wx.navigateTo({
-              url: '/pages/login/index',
-            })
-          }
-        }
-      })
-      return
-    }
+    userInfo: {},
+    avatar: '../../icons/default-avatar.svg'
   },
   gotoSettings() {
+    app.gotoLogin()
     if (!this.data.isLogin) {
-      this.gotoLogin()
       return
     }
     wx.navigateTo({
@@ -41,8 +23,8 @@ Page({
     })
   },
   gotoMyConfig() {
+    app.gotoLogin()
     if (!this.data.isLogin) {
-      this.gotoLogin()
       return
     }
     wx.navigateTo({
@@ -52,9 +34,19 @@ Page({
       }
     })
   },
-  chooseAvatar(e){
+  chooseAvatar(e) {
     console.log(e);
   },
+  gotoAddressManager() {
+    app.gotoLogin()
+    if (!this.data.isLogin) {
+      return
+    }
+    wx.navigateTo({
+      url: '/pages/addressManager/address'
+    })
+  },
+  gotoChat() {},
   /**
    * 生命周期函数--监听页面加载
    */
@@ -73,13 +65,17 @@ Page({
   onShow() {
     let {
       isLogin,
-      userInfo
+      userInfo,
     } = app.globalData
     this.setData({
       isLogin: isLogin,
       userInfo: userInfo
     })
-
+    if (this.data.isLogin) {
+      this.setData({
+        avatar: '../../icons/logined-avatar.svg'
+      })
+    }
   },
 
   /**
