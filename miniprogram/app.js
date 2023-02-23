@@ -15,12 +15,34 @@ App({
         this.globalData.isLogin = true
       },
       fail: err => {
-        console.log(err);
+        wx.showToast({
+          title: '尚未登陆',
+          icon:'error'
+        })
       }
     })
   },
   globalData: {
     userInfo: {},
     isLogin: false
-  }
+  },
+  gotoLogin(){
+    let {
+      isLogin
+    } = this.globalData
+    if (!isLogin) {
+      wx.showModal({
+        title: '尚未登陆',
+        content: '是否前往登录页',
+        complete: (res) => {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '/pages/login/index',
+            })
+          }
+        }
+      })
+      return
+    }
+  },
 });
