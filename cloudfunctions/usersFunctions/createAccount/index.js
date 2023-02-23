@@ -37,8 +37,11 @@ exports.main = async (event, context) => {
       gender: '保密',
     }
   });
-  user =  await db.collection('users').where({
+  user = await db.collection('users').where({
     '_openid': OPENID
   }).get()
-  return {status:'success',user:user.data[0]}
+  return {
+    status: 'success',
+    user: user.data[0]
+  }
 }
