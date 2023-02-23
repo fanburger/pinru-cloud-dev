@@ -49,7 +49,10 @@ Component({
   methods: {
     // 跳转到商品详情页
     gotoDetailPage() {
-      console.log('gotodetailpage');
+      let {_id} = this.data.goodsInfo
+      wx.navigateTo({
+        url: '/pages/goodsDetails/details?_id='+_id
+      })
     },
     switchSelect() {
       this.setData({
