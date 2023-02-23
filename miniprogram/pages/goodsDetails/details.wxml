@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="goods-image-swiper">
+    <swiper indicator-dots style="height: 100%;">
+      <block wx:if="{{!swiperImages.length}}">
+        <swiper-item class="loading-swiper">
+          <van-image use-loading-slot>
+            <van-loading slot="loading" type="spinner"></van-loading>
+          </van-image>
+        </swiper-item>
+      </block>
+      <block wx:else="{{swiperImages.length}}">
+        <swiper-item wx:for="{{swiperImages}}" wx:key="item">
+          <image src="{{item}}" mode="widthFix" style="width: 700rpx;" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <van-cell-group inset class="title-card" border="{{false}}">
+    <van-cell title="{{'￥'+ goods.titlePrice}}" title-class="price-title" value="库存正常" label="租期一天的价格">
+    </van-cell>
+    <van-cell title="{{goods.title}}" title-style="font-size:38rpx;font-weight:bold;" border="{{false}}">
+    </van-cell>
+  </van-cell-group>
+  <van-divider custom-style="width: 85vw;" hairline="{{true}}" contentPosition="center">商品详情</van-divider>
+  <view class="detail-content">
+    <block wx:for="{{content}}" wx:key="item">
+      <image src="{{item}}" mode="widthFix" />
+    </block>
+  </view>
+
+  <view class="goods-action">
+    <van-goods-action>
+      <van-goods-action-icon icon="chat-o" text="客服" bind:click="gotoChat" />
+      <van-goods-action-icon icon="cart-o" text="购物车" bind:click="gotoCart" />
+      <van-goods-action-button color="linear-gradient(97deg, #0dc4b6 0%, rgba(26, 209, 169, 0.74) 100%);" text="立即下单" bind:click="placeOrder" />
+    </van-goods-action>
+  </view>
+</view>
