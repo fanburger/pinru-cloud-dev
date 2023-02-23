@@ -1,2 +1,5 @@
-<!--pages/userConfig/userConfig.wxml-->
-<text>pages/userConfig/userConfig.wxml</text>
+<view class="container">
+  <view style="top: 30vh;position:relative">
+    <text style="font-size: 42rpx;font-weight: bold;letter-spacing: 0.5em;">即将上线...</text>
+  </view>
+</view>
