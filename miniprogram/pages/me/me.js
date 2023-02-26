@@ -78,7 +78,7 @@ Page({
     })
     if (this.data.isLogin) {
       this.setData({
-        avatar: '../../icons/logined-avatar.svg'
+        avatar: userInfo.avatarCloudUrl
       })
     }
   },

@@ -20,13 +20,16 @@
 
 .avatar{
   display: flex;
+  gap: 14rpx;
   flex-direction: column;
   align-items: center;
+  font-weight: bold;
+  letter-spacing: .1em;
 }
 
 .avatar_image{
   width: 128rpx;
-  border-radius: 100%;
+  border-radius: 12rpx;
 }
 
 .sepline{
