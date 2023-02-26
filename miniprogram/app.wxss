@@ -79,7 +79,7 @@
 .big-white-text {
   color: white;
   font-size: 32rpx;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
 }
 
 page {
