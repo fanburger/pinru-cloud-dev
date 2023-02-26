@@ -34,9 +34,6 @@ Page({
       }
     })
   },
-  chooseAvatar(e) {
-    console.log(e);
-  },
   gotoAddressManager() {
     app.gotoLogin()
     if (!this.data.isLogin) {
@@ -51,6 +48,11 @@ Page({
     if (!this.data.isLogin) {
       return
     }
+  },
+  gotoMyFavorite(){
+    wx.navigateTo({
+      url: '/pages/myFavorite/favorite'
+    })
   },
   /**
    * 生命周期函数--监听页面加载

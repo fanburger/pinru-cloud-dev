@@ -25,7 +25,7 @@
   <!-- 商品和订单管理入口 -->
   <view class="goods-container">
     <view class="goods-opt">
-      <view class="goods-opt-item">
+      <view class="goods-opt-item" bindtap="gotoMyFavorite">
         <image class="icon-32" src="../../icons/favorite.svg" mode="widthFix" />
         <text class="sm-text">我的收藏</text>
       </view>
