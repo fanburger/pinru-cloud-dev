@@ -62,10 +62,10 @@
 
   <!-- 地址管理和客服入口 -->
   <view class="address-msg-con">
-    <view class="wide-btn blue-linear-gradient" bindtap="gotoAddressManager">
+    <button class="wide-btn blue-linear-gradient" bindtap="gotoAddressManager">
       <image class="icon-88" src="../../icons/pin.svg" mode="widthFix" />
       <text class="big-white-text">地址管理</text>
-    </view>
+    </button>
     <button open-type="contact" bindcontact="gotoChat" class="wide-btn orange-linear-gradient">
       <image class="icon-88" src="../../icons/message.svg" mode="widthFix" />
       <text class="big-white-text">联系客服</text>
