@@ -88,7 +88,7 @@ Page({
     wx.cloud.callFunction({
       name: 'userFavorites',
       data: {
-        name: 'selectFavorites',
+        name: 'selectFavoriteByID',
         goodsID: _id
       }
     }).then(res => {
