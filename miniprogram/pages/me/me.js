@@ -8,7 +8,7 @@ Page({
   data: {
     isLogin: false,
     userInfo: {},
-    avatar: '../../icons/default-avatar.svg'
+    avatar: ''
   },
   gotoSettings() {
     app.gotoLogin()
