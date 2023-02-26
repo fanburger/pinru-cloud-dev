@@ -66,9 +66,9 @@
       <image class="icon-88" src="../../icons/pin.svg" mode="widthFix" />
       <text class="big-white-text">地址管理</text>
     </view>
-    <view class="wide-btn orange-linear-gradient" bindtap="gotoChat">
+    <button open-type="contact" bindcontact="gotoChat" class="wide-btn orange-linear-gradient">
       <image class="icon-88" src="../../icons/message.svg" mode="widthFix" />
       <text class="big-white-text">联系客服</text>
-    </view>
+    </button>
   </view>
 </view>
