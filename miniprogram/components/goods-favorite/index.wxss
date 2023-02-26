@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  width: 90vw;
+  align-items: center;
+  height: 180rpx;
+  border-radius: 24rpx;
+  box-shadow: 2px 10px 12px 0px rgba(0, 0, 0, 0.04);
+  margin: 12rpx 0 12rpx 0;
+}
+
+.title-image-148 {
+  width: 148rpx;
+}
+
+.card-right {
+  display: flex;
+  flex-direction: column;
+  gap: 40rpx;
+}
+
+.title-text {
+  font-size: 24rpx;
+  font-weight: normal;
+  letter-spacing: 0em;
+  color: #303133;
+}
+
+.tags-price{
+  display: flex;
+}
+
+.unit-price{
+  position: relative;
+  bottom: 8rpx;
+}
+
+.price{
+  font-size: 40rpx;
+  color: #EA4848;
+}
+
+.unit{
+  font-size: 22rpx;
+  color: rgba(0, 0, 0, 0.3);
+}

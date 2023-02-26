@@ -1,11 +1,13 @@
-// pages/myFavorite/favorite.js
+import {
+  titleImageHome
+} from '../../fileID'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    favorites: []
   },
 
   /**
@@ -26,7 +28,27 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    wx.cloud.callFunction({
+      name: 'userFavorites',
+      data: {
+        name: 'selectFavorites'
+      }
+    }).then(res => {
+      let {
+        favorites,
+        success
+      } = res.result
+      if (success) {
+        let _favorites = []
+        for (const fa of favorites) {
+          fa.titleImage = `${titleImageHome}${fa._id}.png`
+          _favorites.push(fa)
+        }
+        this.setData({
+          favorites: _favorites
+        })
+      }
+    })
   },
 
   /**

@@ -1,2 +1,7 @@
-<!--pages/myFavorite/favorite.wxml-->
-<text>pages/myFavorite/favorite.wxml</text>
+<view class="container">
+  <block wx:for="{{favorites}}" wx:key="_id">
+    <goods-favorite goodsInfo="{{item}}" cardType="favorite"></goods-favorite>
+  </block>
+  <van-empty wx:if="{{favorites.length == 0}}" description="收藏夹为空">
+  </van-empty>
+</view>
