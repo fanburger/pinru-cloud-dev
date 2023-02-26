@@ -1,0 +1,11 @@
+.address-input-con{
+  width: 90vw;
+}
+
+.confirm-btn{
+  position: fixed;
+  bottom: 84rpx;
+  width: 80vw;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+}

@@ -46,7 +46,12 @@ Page({
       url: '/pages/addressManager/address'
     })
   },
-  gotoChat() {},
+  gotoChat() {
+    wx.showToast({
+      title: '暂未开通',
+      icon: 'error'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

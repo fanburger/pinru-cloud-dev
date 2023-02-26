@@ -1,24 +1,32 @@
-// pages/addressManager/address.js
+// pages/feedback/feedback.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    addressList: []
+    msg:''
   },
-  gotoCreateAddress() {
-    wx.navigateTo({
-      url: '/pages/addressEditor/addresseditor'
+  submit(){
+    if (this.data.msg.length < 2) {
+      wx.showToast({
+        title: '内容过短',
+        icon:'error'
+      })
+      return
+    }
+    wx.showLoading({
+      title: ''
     })
-  },
-  gotoEditAddress(e) {
-    let {
-      id: _id
-    } = e.currentTarget.dataset
-    wx.navigateTo({
-      url: '/pages/addressEditor/addresseditor?_id=' + _id
-    })
+    setTimeout(() => {
+      wx.showToast({
+        title: '提交成功',
+        icon:'success'
+      })
+    }, 1000);
+    setTimeout(() => {
+      wx.navigateBack()
+    }, 2000);
   },
   /**
    * 生命周期函数--监听页面加载
@@ -38,26 +46,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    wx.showLoading({
-      title: '加载中'
-    })
-    wx.cloud.callFunction({
-      name: 'addressFunctions',
-      data: {
-        name: 'selectAddress'
-      }
-    }).then(res => {
-      this.setData({
-        addressList: res.result.data
-      })
-      wx.hideLoading()
-    }).catch(err => {
-      console.log(err);
-      wx.showToast({
-        title: '出错了',
-        icon: 'error'
-      })
-    })
+
   },
 
   /**

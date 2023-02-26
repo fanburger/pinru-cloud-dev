@@ -1,0 +1,12 @@
+<view class="container">
+  <van-cell-group inset custom-class="address-input-con">
+    <van-field label="收件人:" model:value="{{receiver}}" placeholder="请填写收件人称呼" required clearable></van-field>
+    <van-field label="手机号码:" model:value="{{phoneNumber}}" placeholder="请填写收件人联系号码" type="number" required clearable></van-field>
+    <van-field label="收货地址:" model:value="{{address}}" placeholder="请填写收件地址" type="textarea" required autosize clearable></van-field>
+    <van-field label="备注:" model:value="{{remark}}" placeholder="请输入地址备注" clearable></van-field>
+  </van-cell-group>
+
+  <view class="confirm-btn">
+    <van-button color="linear-gradient(97deg, #0dc4b6 0%, rgba(26, 209, 169, 0.74) 100%);" round block bind:click="submitAddress">提交新地址</van-button>
+  </view>
+</view>

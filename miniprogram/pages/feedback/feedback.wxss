@@ -1,0 +1,13 @@
+.text-area{
+  margin-top: 44rpx;
+  padding: 38rpx;
+  width: 80vw;
+  height: 30vh;
+  background-color:ghostwhite;
+  border-radius: 24rpx;
+}
+.submit-btn{
+  position: fixed;
+  bottom: 64rpx;
+  width: 80vw;
+}

@@ -1,0 +1,7 @@
+.introduce{
+  padding: 28rpx;
+}
+.txt{
+  text-indent: 2em;
+  margin-bottom: 1em;
+}

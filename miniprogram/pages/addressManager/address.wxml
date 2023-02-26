@@ -1,3 +1,13 @@
-<view class="container">
-  
+<view class="container" style="padding-top: 54rpx;">
+  <block wx:for="{{addressList}}" wx:key="_id">
+    <van-cell-group border="{{false}}" custom-class="cell-group" bindtap="gotoEditAddress" data-id="{{item._id}}">
+      <van-cell title="收件人:" value="{{item.receiver}}" />
+      <van-cell title="手机号:" value="{{item.phoneNumber}}" />
+      <van-cell title="收货地址:" value="{{item.address}}" />
+      <van-cell title="备注:" value="{{item.remark? item.remark:'无'}}" border="{{false}}" />
+    </van-cell-group>
+  </block>
+  <view class="add-button" bindtap="gotoCreateAddress">
+  <van-button color="linear-gradient(97deg, #0dc4b6 0%, rgba(26, 209, 169, 0.74) 100%);" round icon="plus" block>新建地址</van-button>
+  </view>
 </view>

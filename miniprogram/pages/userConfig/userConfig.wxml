@@ -1,5 +1,13 @@
 <view class="container">
-  <view style="top: 30vh;position:relative">
-    <text style="font-size: 42rpx;font-weight: bold;letter-spacing: 0.5em;">即将上线...</text>
-  </view>
+  <van-cell-group custom-class="cell-group">
+    <image src="{{userInfo.avatarCloudUrl.length? userInfo.avatarCloudUrl:'/icons/default-avatar.svg'}}" mode="widthFix" style="width: 94rpx;position: relative;margin: 40rpx 0 20rpx 300rpx;" />
+    <van-button open-type="chooseAvatar" bindchooseavatar="changeAvatar" hairline type="primary" style="position: relative;margin-left: 260rpx;">
+      更换头像
+    </van-button>
+    <van-field label="昵称" input-align="right" value="{{userInfo.nickname}}" bind:confirm	="submitNickname"></van-field>
+    <van-cell title="性别" is-link bind:click="showPop" value="{{userInfo.gender}}"></van-cell>
+  </van-cell-group>
+  <van-popup wx:if="{{isshow}}" show="{{ isshow }}" bind:close="closePop" position="bottom" round custom-style="height: 40%;width: 100%;">
+    <van-picker show-toolbar title="选择您的性别" columns="{{ genders }}" bind:cancel="onCancel" bind:confirm="onConfirm" />
+  </van-popup>
 </view>

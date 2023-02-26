@@ -1,0 +1,6 @@
+<view class="container">
+  <textarea class="text-area" model:value="{{msg}}" placeholder="请在此处输入您的反馈意见, 我们将会匿名提交!"/>
+  <view class="submit-btn">
+  <van-button bind:click="submit" color="linear-gradient(97deg, #0dc4b6 0%, rgba(26, 209, 169, 0.74) 100%);" block round>提交</van-button>
+  </view>
+</view>

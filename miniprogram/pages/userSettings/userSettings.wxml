@@ -1,5 +1,13 @@
 <view class="container">
-  <view style="top: 30vh;position:relative">
-    <text style="font-size: 42rpx;font-weight: bold;letter-spacing: 0.5em;">即将上线...</text>
+  <van-cell-group title="账户" custom-class="cell-group">
+    <van-cell title="手机号" value="{{phoneNumber}}"></van-cell>
+  </van-cell-group>
+  <van-cell-group title="应用相关" custom-class="cell-group">
+    <van-cell is-link title="意见反馈" bindtap="gotoFeedback"></van-cell>
+    <van-cell is-link title="关于《品如的衣柜》" bindtap="gotoIntroduce"></van-cell>
+    <van-cell is-link title="隐私政策" bindtap="gotoPrivacyPolicy"></van-cell>
+  </van-cell-group>
+  <view class="logout-btn">
+    <van-button block color="red" round bind:click="logout">退出账户</van-button>
   </view>
 </view>

@@ -25,14 +25,11 @@ Page({
     }
     return true
   },
-  gotoChat() {
+  gotoChat(e) {
     if (!this.checkLogin()) {
       return
     }
-    wx.showToast({
-      title: '暂未开通',
-      icon: 'error'
-    })
+    console.log(e);
   },
   gotoCart() {
     if (!this.checkLogin()) {

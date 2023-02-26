@@ -1,39 +1,18 @@
-const app = getApp()
+// pages/privacyPolicy/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    phoneNumber: ''
+
   },
-  logout(){
-    app.logout()
-  },
-  gotoFeedback(){
-    wx.navigateTo({
-      url: '/pages/feedback/feedback'
-    })
-  },
-  gotoIntroduce(){
-    wx.navigateTo({
-      url: '/pages/introduce/introduce'
-    })
-  },
-  gotoPrivacyPolicy(){
-    wx.navigateTo({
-      url: '/pages/privacyPolicy/index'
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    if (app.globalData.isLogin) {
-      this.setData({
-        phoneNumber: app.globalData.userInfo.phoneNumber
-      })
-    }
+
   },
 
   /**

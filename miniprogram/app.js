@@ -17,7 +17,7 @@ App({
       fail: err => {
         wx.showToast({
           title: '尚未登陆',
-          icon:'error'
+          icon: 'error'
         })
       }
     })
@@ -26,7 +26,15 @@ App({
     userInfo: {},
     isLogin: false
   },
-  gotoLogin(){
+  logout() {
+    wx.clearStorageSync()
+    this.globalData.userInfo = {},
+      this.globalData.isLogin = false
+    wx.reLaunch({
+      url: '/pages/home/home'
+    })
+  },
+  gotoLogin() {
     let {
       isLogin
     } = this.globalData

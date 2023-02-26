@@ -1,1 +1,14 @@
-/* pages/addressManager/address.wxss */
+.cell-group{
+  width: 85vw;
+  padding-top: 28rpx;
+  padding-bottom: 24rpx;
+  border-radius: 34rpx;
+  box-shadow: 2px 10px 12px 0px rgba(0, 0, 0, 0.08);
+}
+
+.add-button{
+  position: fixed;
+  bottom: 64rpx;
+  width: 75vw;
+  z-index: 1;
+}

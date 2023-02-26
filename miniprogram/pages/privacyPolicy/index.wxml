@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="title">隐私政策</view>
+  <view class="content">
+    <view class="section">
+      <view class="section-title">信息收集与使用</view>
+      <view class="section-content">我们会收集您的个人信息，包括但不限于姓名、电话号码、电子邮件地址等。这些信息将被用于处理您的订单、向您发送通知、提供客户支持等服务。</view>
+    </view>
+    <view class="section">
+      <view class="section-title">信息保护</view>
+      <view class="section-content">我们会采取必要的措施保护您的个人信息，防止数据泄露、滥用或未经授权的访问。我们将仅在必要的情况下共享您的个人信息，比如向承运人提供您的地址和联系方式。</view>
+    </view>
+    <view class="section">
+      <view class="section-title">Cookie和其他技术</view>
+      <view class="section-content">我们可能会使用Cookie和其他技术来收集信息并改善我们的服务。Cookie是一种小型数据文件，可以存储在您的设备上。您可以通过设置您的浏览器来拒绝Cookie。</view>
+    </view>
+    <view class="section">
+      <view class="section-title">隐私政策变更</view>
+      <view class="section-content">我们保留随时修改或更新本隐私政策的权利。如果我们做出任何重大更改，我们将通过网站或电子邮件通知您。</view>
+    </view>
+    <view class="section-content">
+      本隐私政策的最后更新日期为 2023 年 2 月 26 日。
+    </view>
+  </view>
+</view>

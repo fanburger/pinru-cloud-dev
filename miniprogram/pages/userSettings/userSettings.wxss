@@ -1,1 +1,8 @@
-/* pages/userSettings/userSettings.wxss */
+.cell-group{
+  width: 90vw;
+}
+.logout-btn{
+  position: fixed;
+  bottom: 64rpx;
+  width: 80vw;
+}

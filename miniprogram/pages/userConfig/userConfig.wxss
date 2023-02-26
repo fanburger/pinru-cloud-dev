@@ -1,1 +1,7 @@
-/* pages/userConfig/userConfig.wxss */
+.cell-group {
+  width: 700rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24rpx;
+}
