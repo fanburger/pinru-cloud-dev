@@ -54,6 +54,11 @@ Page({
       url: '/pages/myFavorite/favorite'
     })
   },
+  gotoCoupous(){
+    wx.navigateTo({
+      url: '/pages/coupous/coupous'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

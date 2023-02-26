@@ -1,0 +1,3 @@
+<view class="container">
+  <van-empty description="暂无优惠券" />
+</view>

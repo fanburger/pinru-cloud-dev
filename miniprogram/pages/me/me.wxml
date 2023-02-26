@@ -33,7 +33,7 @@
         <image class="icon-32" src="../../icons/history.svg" mode="widthFix" />
         <text class="sm-text">浏览记录</text>
       </view>
-      <view class="goods-opt-item">
+      <view class="goods-opt-item" bindtap="gotoCoupous">
         <image class="icon-32" src="../../icons/coupons.svg" mode="widthFix" />
         <text class="sm-text">优惠券</text>
       </view>
