@@ -13,7 +13,8 @@ Page({
     _id: '',
     swiperImages: [],
     goods: {},
-    content: []
+    content: [],
+    isFavorite: false
   },
   checkLogin() {
     app.gotoLogin()
@@ -29,7 +30,6 @@ Page({
     if (!this.checkLogin()) {
       return
     }
-    console.log(e);
   },
   gotoCart() {
     if (!this.checkLogin()) {
@@ -56,6 +56,51 @@ Page({
     } = this.data
     wx.navigateTo({
       url: '/pages/orderEditor/index?_id=' + _id
+    })
+  },
+  changeFavoriteStatus() {
+    let {
+      isFavorite,
+      _id
+    } = this.data
+    wx.cloud.callFunction({
+      name: 'userFavorites',
+      data: {
+        name: 'clickFavorite',
+        goodsID: _id,
+        status: !isFavorite
+      }
+    }).then(res => {
+      let {
+        success
+      } = res.result
+      if (success) {
+        this.setData({
+          isFavorite: !isFavorite
+        })
+      }
+    })
+  },
+  queryFavoriteStatus() {
+    let {
+      _id
+    } = this.data
+    wx.cloud.callFunction({
+      name: 'userFavorites',
+      data: {
+        name: 'selectFavorites',
+        goodsID: _id
+      }
+    }).then(res => {
+      let {
+        success,
+        isFavorite
+      } = res.result
+      if (success) {
+        this.setData({
+          isFavorite: isFavorite
+        })
+      }
     })
   },
   /**
@@ -118,6 +163,7 @@ Page({
         })
       }
     })
+    this.queryFavoriteStatus()
   },
 
   /**
