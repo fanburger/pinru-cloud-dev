@@ -78,40 +78,26 @@ Page({
       _openid,
       _id
     } = app.globalData.userInfo
-    wx.showLoading({
-      title: ''
-    })
-    wx.downloadFile({
-      url: avatarUrl,
+    wx.cloud.uploadFile({
+      cloudPath: `avatar/${_openid}.jpeg`,
+      filePath: avatarUrl,
       success: res => {
-        wx.cloud.uploadFile({
-          cloudPath: `avatar/${_openid}.jpeg`,
-          filePath: res.tempFilePath,
-          success: res => {
-            this.setData({
-              'userInfo.avatarCloudUrl': res.fileID
-            })
-            let {
-              userInfo
-            } = app.globalData
-            userInfo.avatarCloudUrl = res.fileID
-            wx.setStorageSync('userInfo', userInfo)
-            wx.cloud.callFunction({
-              name: 'usersFunctions',
-              data: {
-                name: 'updateAvatar',
-                avatarCloudUrl: res.fileID,
-                _id
-              }
-            })
+        this.setData({
+          'userInfo.avatarCloudUrl': res.fileID
+        })
+        let {
+          userInfo
+        } = app.globalData
+        userInfo.avatarCloudUrl = res.fileID
+        wx.setStorageSync('userInfo', userInfo)
+        wx.cloud.callFunction({
+          name: 'usersFunctions',
+          data: {
+            name: 'updateAvatar',
+            avatarCloudUrl: res.fileID,
+            _id
           }
         })
-      },
-      fail: err => {
-        console.log(err);
-      },
-      complete: res => {
-        wx.hideLoading()
       }
     })
   },

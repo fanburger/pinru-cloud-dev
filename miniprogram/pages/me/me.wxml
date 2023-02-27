@@ -11,7 +11,7 @@
       <image class="icon-32" src="../../icons/settings-login.svg" mode="widthFix" bindtap="gotoSettings" />
     </view>
     <view bindtap="gotoMyConfig" class="avatar">
-      <image src="{{avatar}}" mode="widthFix" class="avatar_image" />
+      <image src="{{avatar.length==0? '../../icons/default-avatar.svg':avatar}}" mode="widthFix" class="avatar_image" />
       <text style="color: #1A1A1A;font-size: 28rpx;" bindtap="{{isLogin? '':'gotoLogin'}}">{{isLogin? userInfo.nickname:'立即登录'}}</text>
     </view>
     <view class="sepline">
