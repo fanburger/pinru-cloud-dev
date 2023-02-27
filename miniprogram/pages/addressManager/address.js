@@ -20,6 +20,48 @@ Page({
       url: '/pages/addressEditor/addresseditor?_id=' + _id
     })
   },
+  deleteAddress(e) {
+    let {
+      id:_id
+    } = e.currentTarget.dataset
+    wx.showModal({
+      title: '删除地址',
+      content: '确定要删除该地址吗？',
+      complete: (res) => {
+        if (res.confirm) {
+          wx.cloud.callFunction({
+            name: 'addressFunctions',
+            data: {
+              name: 'deleteAddress',
+              _id
+            }
+          }).then(res => {
+            let {
+              success
+            } = res.result
+            if (success) {
+              wx.showToast({
+                title: '删除成功',
+                icon: 'success'
+              })
+              let newAddressList = this.data.addressList.filter(elem => {
+                return elem._id != _id
+              })
+              this.setData({
+                addressList: newAddressList
+              })
+            } else {
+              wx.showToast({
+                title: '删除失败',
+                icon: 'error'
+              })
+
+            }
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
