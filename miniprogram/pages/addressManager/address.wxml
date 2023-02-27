@@ -7,7 +7,8 @@
       <van-cell title="备注:" value="{{item.remark? item.remark:'无'}}" border="{{false}}" />
     </van-cell-group>
   </block>
+  <van-empty wx:if="{{addressList.length == 0}}" description="没有添加地址"></van-empty>
   <view class="add-button" bindtap="gotoCreateAddress">
-  <van-button color="linear-gradient(97deg, #0dc4b6 0%, rgba(26, 209, 169, 0.74) 100%);" round icon="plus" block>新建地址</van-button>
+    <van-button color="linear-gradient(97deg, #0dc4b6 0%, rgba(26, 209, 169, 0.74) 100%);" round icon="plus" block>新建地址</van-button>
   </view>
 </view>
