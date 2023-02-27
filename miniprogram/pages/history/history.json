@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "goods-card": "/components/goods-card/index"
+  },
+  "navigationBarTitleText": "浏览历史"
+}

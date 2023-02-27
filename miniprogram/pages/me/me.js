@@ -49,12 +49,17 @@ Page({
       return
     }
   },
-  gotoMyFavorite(){
+  gotoMyFavorite() {
     wx.navigateTo({
       url: '/pages/myFavorite/favorite'
     })
   },
-  gotoCoupous(){
+  gotoHistory() {
+    wx.navigateTo({
+      url: '/pages/history/history'
+    })
+  },
+  gotoCoupous() {
     wx.navigateTo({
       url: '/pages/coupous/coupous'
     })

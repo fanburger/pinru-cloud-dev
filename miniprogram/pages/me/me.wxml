@@ -29,7 +29,7 @@
         <image class="icon-32" src="../../icons/favorite.svg" mode="widthFix" />
         <text class="sm-text">我的收藏</text>
       </view>
-      <view class="goods-opt-item">
+      <view class="goods-opt-item" bindtap="gotoHistory">
         <image class="icon-32" src="../../icons/history.svg" mode="widthFix" />
         <text class="sm-text">浏览记录</text>
       </view>

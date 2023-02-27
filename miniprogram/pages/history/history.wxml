@@ -1,0 +1,5 @@
+<view class="container">
+  <block wx:for="{{goodsList}}" wx:key="id">
+    <goods-card goodsInfo="{{item}}" cardType="normal"></goods-card>
+  </block>
+</view>

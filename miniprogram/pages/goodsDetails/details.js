@@ -119,7 +119,18 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+    let {
+      _id: goodsID
+    } = this.data
+    wx.cloud.callFunction({
+      name: 'historyFunctions',
+      data: {
+        name: 'createHistory',
+        goodsID
+      }
+    }).catch(err => {
+      console.log('加入浏览记录失败');
+    })
   },
 
   /**
