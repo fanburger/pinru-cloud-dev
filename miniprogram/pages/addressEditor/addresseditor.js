@@ -11,11 +11,28 @@ Page({
     address: '',
     remark: ''
   },
+  hasEmptyContent(...items) {
+    for (const iterator of items) {
+      if (iterator.trim().length == 0) {
+        return true
+      }
+    }
+    return false
+  },
   submitAddress() {
     let {
-      _id,receiver,phoneNumber,address,remark
+      _id,
+      receiver,
+      phoneNumber,
+      address,
+      remark
     } = this.data
-    console.log(this.data);
+    if (this.hasEmptyContent(receiver, phoneNumber, address)) {
+      wx.showToast({
+        title: '请正确填写',
+        icon: 'error'
+      })
+    }
     let funcName = _id ? 'updateAddress' : 'createAddress'
     wx.showLoading({
       title: ''
@@ -39,7 +56,7 @@ Page({
         setTimeout(() => {
           wx.navigateBack()
         }, 1500);
-      }else{
+      } else {
         console.log(res);
       }
     }).catch(err => {
