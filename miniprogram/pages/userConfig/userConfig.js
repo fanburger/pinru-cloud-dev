@@ -82,13 +82,13 @@ Page({
       cloudPath: `avatar/${_openid}.jpeg`,
       filePath: avatarUrl,
       success: res => {
-        this.setData({
-          'userInfo.avatarCloudUrl': res.fileID
-        })
         let {
           userInfo
         } = app.globalData
         userInfo.avatarCloudUrl = res.fileID
+        this.setData({
+          userInfo: userInfo
+        })
         wx.setStorageSync('userInfo', userInfo)
         wx.cloud.callFunction({
           name: 'usersFunctions',
@@ -124,7 +124,9 @@ Page({
           success
         } = res.result
         if (success) {
-          let {userInfo} = app.globalData
+          let {
+            userInfo
+          } = app.globalData
           userInfo.nickname = nickname
           wx.setStorageSync('userInfo', userInfo)
           wx.showToast({
