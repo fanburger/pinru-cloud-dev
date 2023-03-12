@@ -1,0 +1,8 @@
+<view class="add-seletor">
+  <image src="../../icons/box-white.svg" mode="widthFix" class="icon-72" style="margin-left: 16rpx;"/>
+  <view class="rec-info">
+    <text>收件人:尹凡</text>
+    <text>收货地址: 上海理工大学4公寓2号楼101</text>
+  </view>
+  <image src="../../icons/edit.svg" mode="widthFix" class="icon-72 icon-right"/>
+</view>
